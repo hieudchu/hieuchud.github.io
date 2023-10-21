@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('background.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+.header {
+    background-color: #E4000F; /* Nintendo red */
+    color: #fff;
+    padding: 10px;
+    font-family: "Arial", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px; /* Adjust spacing as needed */
+    font-size: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Bauhaus 93", "Arial", sans-serif; /* Use a Nintendo-like font */
+    font-size: 50px;
+    letter-spacing: 5px; /* Adjust spacing as needed */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.box {
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    background-image: url('mario-box.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    line-height: 200px;
+    font-size: 24px;
+    margin: 20px;
+    cursor: pointer;
+    animation: floatAnimation 3s infinite; /* Apply the animation */
+    transition: transform 0.2s ease-in-out;
+}
+
+.box:hover {
+    transform: scale(1.1);
+}

@@ -1,59 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Pick me box</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-image: url('background.gif');
-            /* Replace 'background.gif' with the path to your GIF file */
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            /* Fixed background scrolling effect */
-            text-align: center;
-        }
-
-        .header {
-            background-color: #000;
-            color: #fff;
-            padding: 10px;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            /* Stack boxes vertically on mobile */
-            align-items: center;
-            padding: 20px;
-        }
-
-        .box {
-            width: 100%;
-            max-width: 200px;
-            /* Limit the maximum width */
-            height: 200px;
-            background-image: url('mario-box.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            color: #fff;
-            text-align: center;
-            line-height: 200px;
-            font-size: 24px;
-            margin: 20px;
-            cursor: pointer;
-            transition: transform 0.2s ease-in-out;
-        }
-
-        .box:hover {
-            transform: scale(1.1);
-        }
-    </style>
 </head>
-
 <body>
     <div class="header">
         <h1>Pick me box!</h1>
@@ -63,15 +14,6 @@
         <div class="box" onclick="navigateToPage(2)"></div>
         <div class="box" onclick="navigateToPage(2)"></div>
     </div>
-    <script>
-        function navigateToPage(pageNumber) {
-            if (pageNumber === 1) {
-                window.location.href = 'page1.html';
-            } else if (pageNumber === 2) {
-                window.location.href = 'page2.html';
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
-
 </html>
