@@ -7,28 +7,38 @@ body {
     text-align: center;
 }
 
+/* For larger screens */
 .header {
     background-color: #E4000F; /* Nintendo red */
     color: #fff;
-    padding: 10px;
-    font-family: "Arial", sans-serif;
-    text-transform: uppercase;
+    padding: 30px;
     text-align: center;
-    letter-spacing: 3px; /* Adjust spacing as needed */
-    font-size: 24px;
     position: relative;
     overflow: hidden;
+    background-image: url('nintendo-pattern.png'); /* Background pattern image */
+    background-size: 150px; /* Adjust the size of the pattern */
 }
 
 .header::before {
+    content: "Pick me Boxes!"; /* Text content for the header */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: "Bauhaus 93", "Arial", sans-serif; /* Use a Nintendo-like font */
-    font-size: 50px;
-    letter-spacing: 5px; /* Adjust spacing as needed */
+    font-size: 60px;
+    letter-spacing: 6px; /* Adjust spacing as needed */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add a subtle shadow to the text */
 }
+
+/* For smaller screens (e.g., mobile) */
+@media (max-width: 767px) {
+    .header::before {
+        font-size: 36px; /* Adjust font size for mobile */
+        letter-spacing: 3px; /* Adjust spacing for mobile */
+    }
+}
+
 
 .container {
     display: flex;
