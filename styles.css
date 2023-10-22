@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url('background.gif');
+    background-image: url('mario.gif');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -43,7 +43,7 @@ body {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-27px); /* Reduce animation height for smaller screens */
+        transform: translateY(-30px); /* Reduce animation height for smaller screens */
     }
     100% {
         transform: translateY(0);
@@ -52,8 +52,8 @@ body {
 
 .box {
     width: 100%;
-    max-width: 180px;
-    height: 180px; /* Reduce the box height for smaller screens */
+    max-width: 200px;
+    height: 200px; /* Reduce the box height for smaller screens */
     background-image: url('mario-box.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -61,8 +61,7 @@ body {
     color: #fff;
     text-align: center;
     line-height: 180px; /* Adjust line-height for the reduced box height */
-    font-size: 20px; /* Reduce font size for smaller screens */
-    margin: 15px; /* Reduce margin for smaller screens */
+    margin: 20px; /* Reduce margin for smaller screens */
     cursor: pointer;
     animation: floatBoxAnimation 3s infinite;
     transition: transform 0.2s ease-in-out;
@@ -70,6 +69,11 @@ body {
 
 .box:hover {
     transform: scale(1.5);
+}
+
+.onClickAnimation {
+    animation: yourOnClickAnimation 1s linear; /* Add your onClick animation styles here */
+    transform-origin: center;
 }
 
 /* Animation for the .heart-frame element */
@@ -90,8 +94,8 @@ body {
 
 /* Heart frame for larger screens */
 .heart-frameTop {
-    width: 80px; /* Reduce the heart-frame size for smaller screens */
-    height: 80px; /* Reduce the heart-frame size for smaller screens */
+    width: 100px; /* Reduce the heart-frame size for smaller screens */
+    height: 100px; /* Reduce the heart-frame size for smaller screens */
     padding-top: 10px;
     position: absolute;
     animation: floatHeartFrameAnimation 5s infinite linear;
@@ -104,28 +108,9 @@ img.heart-imageTop {
     object-fit: cover;
 }
 
-/* Heart frame for smaller screens (e.g., mobile) */
-@media (max-width: 767px) {
-    .header {
-        padding: 30px;
-    }
-
-    .header::before {
-        font-size: 30px; /* Adjust font size for mobile */
-        letter-spacing: 3px; /* Adjust spacing for mobile */
-        width: 100%; /* Allow the text to wrap within the header */
-    }
-
-    .heart-frameTop {
-        width: 40px; /* Reduce the heart-frame size for smaller screens */
-        height: 40px; /* Reduce the heart-frame size for smaller screens */
-        padding-top: 10px;
-    }
-}
-
 .heart-frameBot {
-    width: 40px; /* Reduce the heart-frame size for smaller screens */
-    height: 40px; /* Reduce the heart-frame size for smaller screens */
+    width: 100px; /* Reduce the heart-frame size for smaller screens */
+    height: 100px; /* Reduce the heart-frame size for smaller screens */
     position: absolute;
     bottom: 40px; /* Move it up by 20px from the bottom */
     right: 20px; /* Position it on the right side by 20px from the right */
@@ -137,4 +122,30 @@ img.heart-imageBot {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Heart frame for smaller screens (e.g., mobile) */
+@media only screen and (max-width: 932px) and (orientation: portrait){
+    .header {
+        padding: 30px;
+    }
+
+    .header::before {
+        font-size: 40px; /* Adjust font size for mobile */
+        letter-spacing: 3px; /* Adjust spacing for mobile */
+        width: 100%; /* Allow the text to wrap within the header */
+    }
+
+    .heart-frameTop {
+        width: 80px; /* Reduce the heart-frame size for smaller screens */
+        height: 80px; /* Reduce the heart-frame size for smaller screens */
+        padding-top: 30px;
+    }
+
+    .heart-frameBot {
+        width: 80px; /* Reduce the heart-frame size for smaller screens */
+        height: 80px; /* Reduce the heart-frame size for smaller screens */
+        bottom: 60px; /* Move it up by 50px from the bottom */
+        right: 20px; /* Position it on the right side by 20px from the right */
+    }
 }
