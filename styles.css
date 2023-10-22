@@ -30,20 +30,6 @@ body {
     width: 80%; /* Set a width to wrap the text within the header */
 }
 
-/* Header styles for smaller screens (e.g., mobile) */
-@media (max-width: 767px) {
-    .header {
-        padding: 30px;
-    }
-
-    .header::before {
-        font-size: 30px; /* Adjust font size for mobile */
-        letter-spacing: 3px; /* Adjust spacing for mobile */
-        width: 100%; /* Allow the text to wrap within the header */
-    }
-}
-
-
 .container {
     display: flex;
     flex-direction: column;
@@ -102,6 +88,7 @@ body {
     }
 }
 
+/* Heart frame for larger screens */
 .heart-frameTop {
     width: 80px; /* Reduce the heart-frame size for smaller screens */
     height: 80px; /* Reduce the heart-frame size for smaller screens */
@@ -117,9 +104,28 @@ img.heart-imageTop {
     object-fit: cover;
 }
 
+/* Heart frame for smaller screens (e.g., mobile) */
+@media (max-width: 767px) {
+    .header {
+        padding: 30px;
+    }
+
+    .header::before {
+        font-size: 30px; /* Adjust font size for mobile */
+        letter-spacing: 3px; /* Adjust spacing for mobile */
+        width: 100%; /* Allow the text to wrap within the header */
+    }
+
+    .heart-frameTop {
+        width: 40px; /* Reduce the heart-frame size for smaller screens */
+        height: 40px; /* Reduce the heart-frame size for smaller screens */
+        padding-top: 10px;
+    }
+}
+
 .heart-frameBot {
-    width: 80px; /* Reduce the heart-frame size for smaller screens */
-    height: 80px; /* Reduce the heart-frame size for smaller screens */
+    width: 40px; /* Reduce the heart-frame size for smaller screens */
+    height: 40px; /* Reduce the heart-frame size for smaller screens */
     position: absolute;
     bottom: 40px; /* Move it up by 20px from the bottom */
     right: 20px; /* Position it on the right side by 20px from the right */
