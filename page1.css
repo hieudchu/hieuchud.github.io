@@ -1,0 +1,438 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111111;
+}
+
+:root{
+    /* color type A */
+    --line_color : #555555 ;
+    --back_color : #FFECF6  ;
+
+    /* color type B */
+    /* --line_color : #1b1919 ;
+    --back_color : #E9ECFF  ; */
+
+    /* color type C */
+    /* --line_color : #00135C ;
+    --back_color : #DEFFFA  ; */
+}
+
+.button{
+    background: url('pinkBackground.png');
+    z-index : 2 ;
+    width : 240px ;
+    height : 56px ;
+    text-decoration : none ;
+    font-size : 14px ; 
+    font-weight : bold ;
+    color : var(--line_color) ;
+    letter-spacing : 2px ;
+    transition : all .3s ease ;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.button__text{
+    display : flex ;
+    justify-content : center ;
+    align-items : center ;
+    width : 100% ;
+    height : 100% ;
+}
+.button::before,
+.button::after,
+.button__text::before,
+.button__text::after{
+    content : '' ;
+    position : absolute ;
+    height : 3px ;
+    border-radius : 2px ;
+    background : var(--line_color) ;
+    transition : all .5s ease ;
+}
+.button::before{
+    top : 0 ;
+    left : 54px ;
+    width : calc( 100% - 56px * 2 - 16px ) ;
+}
+.button::after{
+    top : 0 ;
+    right : 54px ;
+    width : 8px ;
+}
+.button__text::before{
+    bottom : 0 ;
+    right : 54px ;
+    width : calc( 100% - 56px * 2 - 16px ) ;
+}
+.button__text::after{
+    bottom : 0 ;
+    left : 54px ;
+    width : 8px ;
+}
+.button__line{
+    position : absolute ;
+    top : 0 ;
+    width : 56px ;
+    height : 100% ;
+    overflow : hidden ;
+}
+.button__line::before{
+    content : '' ;
+    position : absolute ;
+    top : 0 ;
+    width : 150% ;
+    height : 100% ;
+    box-sizing : border-box ;
+    border-radius : 300px ;
+    border : solid 3px var(--line_color) ;
+}
+.button__line:nth-child(1),
+.button__line:nth-child(1)::before{
+    left : 0 ;
+}
+.button__line:nth-child(2),
+.button__line:nth-child(2)::before{
+    right : 0 ;
+}
+.button:hover{
+    letter-spacing : 6px ;
+}
+.button:hover::before,
+.button:hover .button__text::before{
+    width : 8px ;
+}
+.button:hover::after,
+.button:hover .button__text::after{
+    width : calc( 100% - 56px * 2 - 16px ) ;
+}
+.button__drow1,
+.button__drow2{
+    position : absolute ;
+    z-index : -1 ;
+    border-radius : 16px ;
+    transform-origin : 16px 16px ;
+}
+.button__drow1{
+    top : -16px ;
+    left : 40px ;
+    width : 32px ;
+    height : 0;
+    transform : rotate( 30deg ) ;
+}
+.button__drow2{
+    top : 44px ;
+    left : 77px ;
+    width : 32px ;
+    height : 0 ;
+    transform : rotate(-127deg ) ;
+}
+.button__drow1::before,
+.button__drow1::after,
+.button__drow2::before,
+.button__drow2::after{
+    content : '' ;
+    position : absolute ;
+}
+.button__drow1::before{
+    bottom : 0 ;
+    left : 0 ;
+    width : 0 ;
+    height : 32px ;
+    border-radius : 16px ;
+    transform-origin : 16px 16px ;
+    transform : rotate( -60deg ) ;
+}
+.button__drow1::after{
+    top : -10px ;
+    left : 45px ;
+    width : 0 ;
+    height : 32px ;
+    border-radius : 16px ;
+    transform-origin : 16px 16px ;
+    transform : rotate( 69deg ) ;
+}
+.button__drow2::before{
+    bottom : 0 ;
+    left : 0 ;
+    width : 0 ;
+    height : 32px ;
+    border-radius : 16px ;
+    transform-origin : 16px 16px ;
+    transform : rotate( -146deg ) ;
+}
+.button__drow2::after{
+    bottom : 26px ;
+    left : -40px ;
+    width : 0 ;
+    height : 32px ;
+    border-radius : 16px ;
+    transform-origin : 16px 16px ;
+    transform : rotate( -262deg ) ;
+}
+.button__drow1,
+.button__drow1::before,
+.button__drow1::after,
+.button__drow2,
+.button__drow2::before,
+.button__drow2::after{
+    background : var( --back_color ) ;
+}
+.button:hover .button__drow1{
+    animation : drow1 ease-in .06s ;
+    animation-fill-mode : forwards ;
+}
+.button:hover .button__drow1::before{
+    animation : drow2 linear .08s .06s ;
+    animation-fill-mode : forwards ;
+}
+.button:hover .button__drow1::after{
+    animation : drow3 linear .03s .14s ;
+    animation-fill-mode : forwards ;
+}
+.button:hover .button__drow2{
+    animation : drow4 linear .06s .2s ;
+    animation-fill-mode : forwards ;
+}
+.button:hover .button__drow2::before{
+    animation : drow3 linear .03s .26s ;
+    animation-fill-mode : forwards ;
+}
+.button:hover .button__drow2::after{
+    animation : drow5 linear .06s .32s ;
+    animation-fill-mode : forwards ;
+}
+@keyframes drow1{
+    0%   { height : 0 ; }
+    100% { height : 100px ; }
+}
+@keyframes drow2{
+    0%   { width : 0 ; opacity : 0 ;}
+    10%  { opacity : 0 ;}
+    11%  { opacity : 1 ;}
+    100% { width : 120px ; }
+}
+@keyframes drow3{
+    0%   { width : 0 ; }
+    100% { width : 80px ; }
+}
+@keyframes drow4{
+    0%   { height : 0 ; }
+    100% { height : 120px ; }
+}
+@keyframes drow5{
+    0%   { width : 0 ; }
+    100% { width : 124px ; }
+}
+
+.back-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2; /* Ensure the button is above the frame */
+    background-color: #E4000F; /* Nintendo red */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.card {
+    background-image: url('youInWhite.png');
+    /* Replace with the path to your photo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Set the body height to the full viewport height */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111111;
+    overflow: hidden;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    right: 2%;
+    bottom: 5%;
+    border-top: 2px solid rgba(255, 49, 49, 0.5);
+    border-right: 2px solid rgba(0, 255, 255, 0.5);
+    border-bottom: 2px solid rgba(57, 255, 20, 0.5);
+    border-left: 2px solid rgba(255, 255, 113, 0.5);
+    /* Adjust border properties */
+    box-sizing: border-box;
+}
+
+p {
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+span {
+    position: absolute;
+    border-radius: 100vmax;
+}
+
+.top {
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 8px;
+    background: linear-gradient(90deg,
+            transparent 50%,
+            rgba(255, 49, 49, 0.5),
+            rgb(255, 49, 49));
+}
+
+.bottom {
+    right: 0;
+    bottom: 0;
+    height: 8px;
+    background: linear-gradient(90deg,
+            rgb(57, 255, 20),
+            rgba(57, 255, 20, 0.5),
+            transparent 50%);
+}
+
+.right {
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 0;
+    background: linear-gradient(180deg,
+            transparent 30%,
+            rgba(0, 255, 255, 0.5),
+            rgb(0, 255, 255));
+}
+
+.left {
+    left: 0;
+    bottom: 0;
+    width: 8px;
+    height: 0;
+    background: linear-gradient(180deg,
+            rgb(255, 255, 113),
+            rgba(255, 255, 113, 0.5),
+            transparent 70%);
+}
+
+.top {
+    animation: animateTop 3s ease-in-out infinite;
+}
+
+.bottom {
+    animation: animateBottom 3s ease-in-out infinite;
+}
+
+.right {
+    animation: animateRight 3s ease-in-out infinite;
+}
+
+.left {
+    animation: animateLeft 3s ease-in-out infinite;
+}
+
+@keyframes animateTop {
+    25% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    30%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes animateBottom {
+
+    0%,
+    50% {
+        opacity: 0;
+        width: 0;
+    }
+
+    75% {
+        opacity: 1;
+        width: 100%;
+    }
+
+    76%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes animateRight {
+
+    0%,
+    25% {
+        opacity: 0;
+        height: 0;
+    }
+
+    50% {
+        opacity: 1;
+        height: 100%;
+    }
+
+    55%,
+    100% {
+        height: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes animateLeft {
+
+    0%,
+    75% {
+        opacity: 0;
+        bottom: 0;
+        height: 0%;
+    }
+
+    100% {
+        opacity: 1;
+        height: 100%;
+    }
+}
+
+/* Responsive styles for screens up to 932px width and portrait orientation */
+@media only screen and (max-width: 932px) and (orientation: portrait) {
+    .card {
+        background-size: cover;
+        padding: 2%;
+        /* Add padding to bring the border closer to the background */
+        box-sizing: border-box;
+        /* Include padding in the element's total width and height */
+        border-top: 2px solid rgba(255, 49, 49, 0.5);
+        border-right: 2px solid rgba(0, 255, 255, 0.5);
+        border-bottom: 2px solid rgba(57, 255, 20, 0.5);
+        border-left: 2px solid rgba(255, 255, 113, 0.5);
+        top: 13%;
+        left: 2%;
+        right: 2%;
+        bottom: 13%;
+    }
+
+    .button{
+        
+    }
+}

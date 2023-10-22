@@ -1,11 +1,18 @@
 function navigateToPage(pageNumber) {
-    if (pageNumber === 1) {
-        window.location.href = 'page1.html';
-    } else if (pageNumber === 2) {
-        window.location.href = 'page2.html';
+    switch(pageNumber) {
+        case 1: 
+            window.location.href = 'page1.html';
+            break;
+        case 2: 
+            window.location.href = 'page2.html';
+            break;
+        case 3:
+            window.location.href = 'index.html';
+            break;
+        default:
+            window.location.href = 'index.html';
     }
 }
-
 
 function addClickAnimation(box) {
     box.classList.add('onClickAnimation'); // Add the onClick animation class
