@@ -4,7 +4,7 @@ function navigateToPage(pageNumber) {
             window.location.href = 'page1.html';
             break;
         case 2: 
-            window.location.href = 'page2.html';
+            window.location.href = 'pageBank.html';
             break;
         case 3:
             window.location.href = 'index.html';

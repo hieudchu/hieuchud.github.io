@@ -43,7 +43,7 @@ body {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-30px); /* Reduce animation height for smaller screens */
+        transform: translateY(30px); /* Reduce animation height for smaller screens */
     }
     100% {
         transform: translateY(0);
@@ -147,5 +147,10 @@ img.heart-imageBot {
         height: 80px; /* Reduce the heart-frame size for smaller screens */
         bottom: 60px; /* Move it up by 50px from the bottom */
         right: 20px; /* Position it on the right side by 20px from the right */
+    }
+
+    .box {
+        width: 150px;
+        height: 150px;
     }
 }

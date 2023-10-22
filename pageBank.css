@@ -250,12 +250,11 @@ body {
 }
 
 .card {
-    background-image: url('youInWhite.png');
+    background-image: url('vpBank.jpg');
     /* Replace with the path to your photo */
-    background-size: cover;
-    background-position: center;
+    background-size: cover; 
+    background-position: 0% 15%;
     background-repeat: no-repeat;
-    /* Set the body height to the full viewport height */
     position: relative;
     display: flex;
     justify-content: center;
@@ -268,13 +267,13 @@ body {
     align-items: center;
     position: absolute;
     top: 5%;
-    left: 2%;
-    right: 2%;
+    left: 30%;
+    right: 30%;
     bottom: 5%;
-    border-top: 2px solid rgba(255, 49, 49, 0.5);
-    border-right: 2px solid rgba(0, 255, 255, 0.5);
-    border-bottom: 2px solid rgba(57, 255, 20, 0.5);
-    border-left: 2px solid rgba(255, 255, 113, 0.5);
+    border-top: 5px solid rgba(255, 49, 49, 0.5);
+    border-right: 5px solid rgba(0, 255, 255, 0.5);
+    border-bottom: 5px solid rgba(57, 255, 20, 0.5);
+    border-left: 5px solid rgba(255, 255, 113, 0.5);
     /* Adjust border properties */
     box-sizing: border-box;
 }
@@ -418,14 +417,14 @@ span {
 @media only screen and (max-width: 932px) and (orientation: portrait) {
     .card {
         background-size: cover;
-        padding: 2%;
+        background-position: 0% 35%;
+        padding: 10%;
         /* Add padding to bring the border closer to the background */
         box-sizing: border-box;
-        /* Include padding in the element's total width and height */
-        border-top: 2px solid rgba(255, 49, 49, 0.5);
-        border-right: 2px solid rgba(0, 255, 255, 0.5);
-        border-bottom: 2px solid rgba(57, 255, 20, 0.5);
-        border-left: 2px solid rgba(255, 255, 113, 0.5);
+        border-top: 3px solid rgba(255, 49, 49, 0.5);
+        border-right: 3px solid rgba(0, 255, 255, 0.5);
+        border-bottom: 3px solid rgba(57, 255, 20, 0.5);
+        border-left: 3px solid rgba(255, 255, 113, 0.5);
         top: 13%;
         left: 2%;
         right: 2%;
